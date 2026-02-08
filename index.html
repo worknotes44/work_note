@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🟢Tareq🟢</title>
+  
+  <!-- تحسينات السرعة - DNS Prefetch & Preconnect -->
+  <link rel="dns-prefetch" href="https://docs.google.com">
+  <link rel="preconnect" href="https://docs.google.com" crossorigin>
+  
+  <meta name="description" content="🟢Tareq🟢">
+  <link rel="manifest" href="./manifest.json">
+  
+  <meta name="theme-color" content="#4CAF50">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="🟢Tareq🟢">
+  
+  <link rel="apple-touch-icon" href="https://em-content.zobj.net/source/apple/391/memo_1f4dd.png">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tab-container {
+      display: flex;
+      background-color: #e5e6eb;
+      padding: 0;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      justify-content: flex-start;
+      z-index: 1;
+    }
+
+    .tab {
+      padding: 2px 6px 2px 6px;
+      margin-right: 6px;
+      cursor: pointer;
+      border-radius: 4px;
+      background-color: #ccc;
+      transition: background-color 0.3s;
+    }
+
+    .tab:hover {
+      background-color: #bbb;
+    }
+
+    .tab-content {
+      display: none;
+      width: 100%;
+      height: 100%;
+      padding-bottom: 5px;
+    }
+
+    .active-tab {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .tab-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 40px;
+    }
+
+    .install-btn {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      padding: 10px;
+      background: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      z-index: 1000;
+      cursor: pointer;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div id="installBtn" class="install-btn">تثبيت التطبيق</div>
+
+<div class="tab-container">
+  <div class="tab" onclick="openTab('google')">&nbsp; ---------------SHIPMENTS 📦-------------- &nbsp;</div>
+  <div class="tab" onclick="openTab('999')">&nbsp; -------------مــــــواقــــع 🌐------------ &nbsp;</div>
+  <div class="tab" onclick="openTab('youtube')">&nbsp;--------------DATABASES 💾------------- &nbsp</div>
+  <div class="tab" onclick="openTab('facebook')">&nbsp;-------------الــــــمـــــهـــــام-Tasks 🎯----------- &nbsp;</div>
+  <div class="tab" onclick="openTab('444')"> &nbsp;------------- ايــــــمـــــيـــلات 📧-----------&nbsp;</div>
+  <div class="tab" onclick="openTab('777')"> &nbsp;------------ كـــشـــكـــول 📔------------ &nbsp;</div>
+</div>
+
+<div id="google" class="tab-content">
+  <iframe src="https://docs.google.com/document/d/1dBKVelQcNVJo2E41xPr6O0vaRkL9jhfC/edit"></iframe>
+</div>
+
+<div id="555" class="tab-content">
+  <iframe src="https://docs.google.com/document/d/16MHuu80t0hi3xupzTZmffzY2CdX6SHet/edit"></iframe>
+</div>
+
+<div id="999" class="tab-content">
+  <iframe src="https://docs.google.com/spreadsheets/d/1zUSTDwRi_31U0Gb2eD2L2mEPTF0XmmDK0xDqkKLU0oc/edit?gid=0#gid=0"></iframe>
+</div>
+
+<div id="youtube" class="tab-content">
+  <iframe src="https://docs.google.com/document/d/1dJi97vThNvaky89GSyymWq3vEIY5sc7h/edit"></iframe>
+</div>
+
+<div id="facebook" class="tab-content">
+  <iframe src="https://docs.google.com/document/d/1wC4HCSFMBx4UohGbzAbyEO0_-JLOWp8P/edit"></iframe>
+</div>
+
+<div id="444" class="tab-content">
+  <iframe src="https://docs.google.com/document/d/1WY1wi3RwjmZcfPcxMPuC94smypHraiUk/edit"></iframe>
+</div>
+
+<script>
+  function openTab(tabName) {
+    var contents = document.querySelectorAll('.tab-content');
+    contents.forEach(function(content) {
+      content.style.display = 'none';
+    });
+
+    var tabs = document.querySelectorAll('.tab');
+    tabs.forEach(function(tab) {
+      tab.classList.remove('active-tab');
+    });
+
+    document.getElementById(tabName).style.display = 'block';
+    
+    var activeTab = document.querySelector(`[onclick="openTab('${tabName}')"]`);
+    activeTab.classList.add('active-tab');
+    
+    localStorage.setItem('activeTab', tabName);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var savedTab = localStorage.getItem('activeTab');
+    if (savedTab) {
+      openTab(savedTab);
+    } else {
+      openTab('google');
+    }
+  });
+
+  let deferredPrompt;
+  const installBtn = document.getElementById('installBtn');
+  
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.style.display = 'block';
+    
+    setTimeout(() => {
+      installBtn.style.display = 'none';
+    }, 10000);
+  });
+
+  installBtn.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const choiceResult = await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      installBtn.style.display = 'none';
+    }
+  });
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(function(registration) {
+          console.log('✅ Service Worker مسجل بنجاح');
+        })
+        .catch(function(error) {
+          console.log('❌ فشل تسجيل Service Worker:', error);
+        });
+    });
+  }
+</script>
+
+</body>
+</html>

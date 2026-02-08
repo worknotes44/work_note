@@ -1,0 +1,31 @@
+{
+  "name": "🟢Tareq🟢",
+  "short_name": "🟢Tareq🟢",
+  "description": "تطبيق لتنظيم ومتابعة البحث عن عمل والمهام",
+  "theme_color": "#4CAF50",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "./",
+  "start_url": "./index.html",
+  "icons": [
+    {
+      "src": "https://em-content.zobj.net/source/apple/391/memo_1f4dd.png",
+      "sizes": "160x160",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://em-content.zobj.net/source/apple/391/memo_1f4dd.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://em-content.zobj.net/source/apple/391/memo_1f4dd.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
